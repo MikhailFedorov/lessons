@@ -1,0 +1,19 @@
+#stage {
+  width: 300px;
+  height: 300px;
+  background-color: #3ef;
+  transition: all 0.5s;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
+  padding: 10px;
+  position: relative;
+}
+
+.square {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid black;
+}

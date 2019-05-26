@@ -1,24 +1,25 @@
-// создаём орка на позиции 30, 30
-var ork = new Ork('#ork', 30, 30);
+$(document).ready(function() {
+  // создаём орка на позиции 30, 30
+  var ork = new Ork('#ork', 30, 30);
 
-// по интервалу двигаем его и отрисовываем
-setInterval(function() {
-	ork.move();
-	ork.draw();
-}, 150);
+  // по интервалу двигаем его и отрисовываем
+  setInterval(function() {
+    ork.move();
+    ork.draw();
+  }, 150);
 
-// если нажата клавиша стрелок, то поворачиваем орка
-$(document).keyup(function(e) {
-	if(typeof ork.keys[e.key] !== undefined) {
-  	ork.turn(ork.keys[e.key]);
-  }
+  // если нажата клавиша стрелок, то поворачиваем орка
+  $(document).keyup(function(e) {
+    if(typeof ork.keys[e.key] !== undefined) {
+      ork.turn(ork.keys[e.key]);
+    }
+  });
+
+  // если кликнули по сцене, то задаём орку цель
+  $("#stage").click(function(e) {
+    ork.setTarget(e.offsetX, e.offsetY);
+  });
 });
-
-// если кликнули по сцене, то задаём орку цель
-$("#stage").click(function(e) {
-  ork.setTarget(e.offsetX, e.offsetY);
-});
-
 
 /** КЛАСС ОРКА */
 function Ork(selector, x, y) {

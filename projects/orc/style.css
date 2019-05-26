@@ -1,0 +1,18 @@
+#stage {
+  width: 500px;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid black;
+  margin-top: 30px;
+}
+
+.ork {
+  background-image: url(https://opengameart.org/sites/default/files/orc_spearman-green.png);
+  height: 64px;
+  width: 48px;
+  background-position: 0 -64px;
+  position: absolute;
+  transition: left 0.2s, top 0.2s;
+  transform: translate(-50%, -50%);
+}
